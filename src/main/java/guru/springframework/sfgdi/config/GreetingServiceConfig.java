@@ -17,13 +17,11 @@ import org.springframework.context.annotation.PropertySource;
 public class GreetingServiceConfig {
 
   @Bean
-  FakeDataSource fakeDataSource(@Value("${some.username}") String username,
-                                @Value("${some.password}") String password,
-                                @Value("${some.jdbcurl}") String jdbcurl) {
+  FakeDataSource fakeDataSource(SfgConfiguration sfgConfiguration) {
     FakeDataSource fakeDataSource = new FakeDataSource();
-    fakeDataSource.setUsername(username);
-    fakeDataSource.setPassword(password);
-    fakeDataSource.setJdbcurl(jdbcurl);
+    fakeDataSource.setUsername(sfgConfiguration.getUsername());
+    fakeDataSource.setPassword(sfgConfiguration.getPassword());
+    fakeDataSource.setJdbcurl(sfgConfiguration.getJdbcurl());
 
     return fakeDataSource;
   }

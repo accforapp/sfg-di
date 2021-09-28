@@ -1,5 +1,6 @@
 package guru.springframework.sfgdi;
 
+import guru.springframework.sfgdi.config.SfgConfiguration;
 import guru.springframework.sfgdi.controllers.*;
 import guru.springframework.sfgdi.datasource.FakeDataSource;
 import guru.springframework.sfgdi.services.PrototypeBean;
@@ -42,10 +43,17 @@ public class SfgDiApplication {
 		PrototypeBean prototypeBean2 = context.getBean(PrototypeBean.class);
 		System.out.println(prototypeBean2.getMyScope());
 
+		System.out.println("-------------Fake DataSource---------");
 		FakeDataSource fakeDataSource = context.getBean(FakeDataSource.class);
 		System.out.println(fakeDataSource.getUsername());
 		System.out.println(fakeDataSource.getPassword());
 		System.out.println(fakeDataSource.getJdbcurl());
+
+		System.out.println("-------------Config props bean---------");
+		SfgConfiguration sfgDiApplication = context.getBean(SfgConfiguration.class);
+		System.out.println(sfgDiApplication.getUsername());
+		System.out.println(sfgDiApplication.getPassword());
+		System.out.println(sfgDiApplication.getJdbcurl());
 	}
 
 }
