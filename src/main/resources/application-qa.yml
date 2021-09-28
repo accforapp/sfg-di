@@ -1,0 +1,4 @@
+some:
+  username: QAYmlUserName
+  password: QAYmlPassword
+  jdbcurl: QAYmlURL

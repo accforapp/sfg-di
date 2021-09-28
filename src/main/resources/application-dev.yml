@@ -1,0 +1,4 @@
+some:
+  username: DevYmlUserName
+  password: DevYmlPassword
+  jdbcurl: DevYmlURL
